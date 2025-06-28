@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+import Link from "next/link";
+import React from "react";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -24,6 +27,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <div className="flex items-center justify-between p-4 bg-gray-100 dark:bg-gray-800">
+        {/* <Link href="https://nextjs.org" rel="icon">Test</Link> */}
+        <Link href={"/"}> Home </Link>
+        <Link href={"/clientcompo"}> Client Component </Link>
+        <Link href={"/servercompo"}> Server Component </Link>
+      </div>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
