@@ -27,15 +27,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <div className="flex items-center justify-between p-4 bg-gray-100 dark:bg-gray-800">
+
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        <div className="flex items-center justify-between p-4 bg-gray-100 dark:bg-gray-800">
         {/* <Link href="https://nextjs.org" rel="icon">Test</Link> */}
         <Link href={"/"}> Home </Link>
         <Link href={"/clientcompo"}> Client Component </Link>
         <Link href={"/servercompo"}> Server Component </Link>
-      </div>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+        <Link href={"/users"}> Users </Link>
+        </div>
         {children}
       </body>
     </html>
