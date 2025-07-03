@@ -1,3 +1,4 @@
+"use client";
 import { getUsers } from "@/lib/getUsers/getUsers";
 
 export default async function Users() {
@@ -15,7 +16,11 @@ export default async function Users() {
             <ul>
                 {users.map((user: { id: number; name: string }) => (
                     <li key={user.id}>
-                        <h3>{user.name}</h3>
+                        <h3>
+                            <a href={`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/users/${user.id}`}>
+                                {user.name}
+                            </a>
+                        </h3>
                     </li>
                 ))}
             </ul>{" "}
